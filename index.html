@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscador de Endereço e CEP com Mapa</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+  <div id="developer-credit">Desenvolvido por Pedro Jorge</div>
+  <!-- Botão de alternância de tema -->
+  <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
+    <span class="theme-icon">🌙</span>
+  </button>
+
+  <div class="container">
+    <h1>Buscador de Endereço e CEP com Mapa </h1>
+    
+    
+    <!-- Tabs de navegação -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="cep">Buscar por CEP</button>
+      <button class="tab-btn" data-tab="endereco">Buscar por Endereço</button>
+    </div>
+
+    <!-- Formulário CEP -->
+    <form id="cepForm" class="form-container active">
+      <input type="text" id="cepInput" placeholder="Digite o CEP" maxlength="9">
+      <button type="submit">Buscar CEP</button>
+    </form>
+
+    <!-- Formulário Endereço -->
+    <form id="enderecoForm" class="form-container" style="display: none;">
+      <input type="text" id="ruaInput" placeholder="Digite o nome da rua">
+      <input type="text" id="cidadeInput" placeholder="Cidade">
+      <input type="text" id="ufInput" placeholder="UF (ex: SP)" maxlength="2">
+      <button type="submit">Buscar Endereço</button>
+    </form>
+
+    <div id="resultado" class="resultado"></div>
+    
+    <div id="mapa-container" style="display: none;">
+      <h3>Localização no Mapa</h3>
+      <div id="mapa" style="height: 400px;"></div>
+    </div>
+
+    <h2>Histórico de buscas</h2>
+    <ul id="historico"></ul>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
